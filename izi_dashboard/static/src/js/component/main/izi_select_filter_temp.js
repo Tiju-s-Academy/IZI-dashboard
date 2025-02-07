@@ -223,6 +223,7 @@ var IZISelectFilterTemp = Widget.extend({
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item izi_select_date_format" data-date_format="today">Today</a>
+                        <a class="dropdown-item izi_select_date_format" data-date_format="yesterday">Yesterday</a>
                         <a class="dropdown-item izi_select_date_format" data-date_format="this_week">This Week</a>
                         <a class="dropdown-item izi_select_date_format" data-date_format="this_month">This Month</a>
                         <a class="dropdown-item izi_select_date_format" data-date_format="this_year">This Year</a>

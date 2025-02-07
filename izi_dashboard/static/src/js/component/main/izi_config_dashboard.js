@@ -871,6 +871,9 @@ var IZIConfigDashboard = Widget.extend({
         if (date_format == "today") {
             subtitle = moment().format('DD-MMM-YYYY');
         
+        } else if (date_format == "yesterday") {
+            subtitle = moment().subtract(1, 'days').format('DD-MMM-YYYY');
+
         } else if (date_format == "this_week") {
             var start_date = moment().startOf('week').format('DD-MMM-YYYY');
             var end_date = moment().endOf('week').format('DD-MMM-YYYY');

@@ -80,6 +80,7 @@ class IZIAnalysis(models.Model):
     kpi_auto_calculate = fields.Boolean('Auto Calculate When Open Dashboard', default=False)
     date_format = fields.Selection([
         ('today', 'Today'),
+        ('yesterday', 'Yesterday'),
         ('this_week', 'This Week'),
         ('this_month', 'This Month'),
         ('this_year', 'This Year'),
@@ -88,7 +89,7 @@ class IZIAnalysis(models.Model):
         ('last_week', 'Last Week'),
         ('last_month', 'Last Month'),
         ('last_two_months', 'Last 2 Months'),
-        ('last_three_months', 'Last 3 Months'),
+        ('last_three_months', 'Last 3 Months'), 
         ('last_year', 'Last Year'),
         ('last_10', 'Last 10 Days'),
         ('last_30', 'Last 30 Days'),
@@ -1875,6 +1876,9 @@ class IZIAnalysis(models.Model):
         if date_format == 'this_week':
             start_date = start_date - timedelta(days=start_date.weekday())
             end_date = start_date + timedelta(days=6)
+        elif date_format == 'yesterday':
+            start_date = start_date - timedelta(days=1)
+            end_date = start_date
         elif date_format == 'last_week':
             start_date = start_date - timedelta(days=7)
             start_date = start_date - timedelta(days=start_date.weekday())

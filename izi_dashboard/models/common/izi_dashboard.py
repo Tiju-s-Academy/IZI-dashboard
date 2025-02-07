@@ -240,6 +240,7 @@ class IZIDashboard(models.Model):
     sequence = fields.Integer(string='Sequence')
     date_format = fields.Selection([
         ('today', 'Today'),
+        ('yesterday', 'Yesterday'),
         ('this_week', 'This Week'),
         ('this_month', 'This Month'),
         ('this_year', 'This Year'),
